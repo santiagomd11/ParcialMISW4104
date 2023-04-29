@@ -1,0 +1,35 @@
+<div class="container-fluid">
+  <div class="col-12">
+    <table class="table">
+      <thead>
+        <tr class="first-row">
+          <th class="h4">#</th>
+          <th class="h4">Marca</th>
+          <th class="h4">Linea</th>
+          <th class="h4">Modelo</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let v of vehicles">
+          <td>
+            <dd><strong>{{v.id}}</strong></dd>
+          </td>
+          <td>
+            <dd>{{v.marca}}</dd>
+          </td>
+          <td>
+            <dd>{{v.linea}}</dd>
+          </td>
+          <td>
+            <dd>{{v.modelo}}</dd>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div>
+    <h5>Total Renault: {{getVehiclesNumber("Renault")}}</h5>
+    <h5>Total Chevrolet: {{getVehiclesNumber("Chevrolet")}}</h5>
+    <h5>Total Nissan: {{getVehiclesNumber("Nissan")}}</h5>
+  </div>
+</div>
