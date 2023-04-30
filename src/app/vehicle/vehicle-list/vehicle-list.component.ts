@@ -8,12 +8,14 @@ import { VehicleService } from '../vehicle.service';
   styleUrls: ['./vehicle-list.component.css']
 })
 export class VehicleListComponent implements OnInit {
-  vehicles: Array<Vehicle> = []
+  vehicles: Array<Vehicle> = [];
   constructor(private vehicleService: VehicleService) { }
+  brands: Set<string> = new Set();
 
   getVehicles() {
     this.vehicleService.getVehicles().subscribe((vehicles) => {
-      this.vehicles =  vehicles;
+      this.vehicles = vehicles;
+      this.brands = new Set(this.vehicles.map((vehicle) => vehicle.marca));
     });
   }
 

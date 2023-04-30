@@ -3,10 +3,10 @@
     <table class="table">
       <thead>
         <tr class="first-row">
-          <th class="h4">#</th>
-          <th class="h4">Marca</th>
-          <th class="h4">Linea</th>
-          <th class="h4">Modelo</th>
+          <th>#</th>
+          <th>Marca</th>
+          <th>Linea</th>
+          <th>Modelo</th>
         </tr>
       </thead>
       <tbody>
@@ -28,8 +28,10 @@
     </table>
   </div>
   <div>
-    <h5>Total Renault: {{getVehiclesNumber("Renault")}}</h5>
-    <h5>Total Chevrolet: {{getVehiclesNumber("Chevrolet")}}</h5>
-    <h5>Total Nissan: {{getVehiclesNumber("Nissan")}}</h5>
+    <tr *ngFor="let b of brands">
+      <td>
+        <dd>Total {{b}}: {{getVehiclesNumber(b)}}</dd>
+      </td>
+    </tr>
   </div>
 </div>
